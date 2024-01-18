@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${spaceGrotesk.className} `}>
         <Navbar />
-        <div className="container max-w-4xl mx-auto">
+        <div className="container max-w-4xl mx-auto px-4 lg:px-0">
           {children}
         </div>
         <Footer />

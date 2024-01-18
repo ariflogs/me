@@ -14,21 +14,29 @@ import React from "react";
 
 export default function page() {
   return (
-      <div className="min-h-96">
-        <h2 className="text-3xl">Hey there 👋</h2>
-        <h2 className="text-3xl mb-4">
-          I{"'"}m Arif Hossain, a Software Engineer and Hobbyist Content
-          Creator.
-        </h2>
+    <div className="min-h-96">
+      <div className="h-24 lg:h-32"></div>
+      <h3 className="text-xl md:text-2xl mb-1 md:mb-2">Hey there 👋</h3>
+      <h1 className="text-3xl md:text-5xl font-semibold">
+        I{"'"}m Arif Hossain, a{" "}
+        <a href="/projects" className="text-purple-400">
+          Software Engineer
+        </a>{" "}
+        and Hobbyist{" "}
+        <a href="https://www.youtube.com/@ariflogs" className="text-purple-400">
+          Content Creator
+        </a>
+        .
+      </h1>
 
-        <div className="flex">
-          {/* {cards.map((item) => (
+      <div className="flex">
+        {/* {cards.map((item) => (
             <div key={item.title} className="border border-gray-400 hover:border-gray-200 px-4 py-2 rounded flex align-middle justify-center">
               <p className="text-4xl mr-4">{item.icon}</p>
               <p className="text-lg font-bold">{item.title}</p>
             </div>
           ))} */}
-        </div>
       </div>
+    </div>
   );
 }

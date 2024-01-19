@@ -39,7 +39,7 @@ export default function page() {
         <div>
           <h3 className="text-4xl mb-8">About Me</h3>
 
-          <div className="text-md font-light text-gray-300">
+          <div className="text-md font-light text-zinc-300">
             <p>I{"'"}m a Full-stack developer with focus on backend.</p>
             <p>
               Over the past four years, I have worked with variety of tools and

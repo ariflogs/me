@@ -28,15 +28,18 @@ const timeline = [
 export default function page() {
   return (
     <div>
-      <div className="flex flex-col lg:flex-row lg:space-x-8">
-        <Image
-          src="/arif-t.png"
-          width={300}
-          height={500}
-          alt="arif profile"
-          className="rouned"
-        />
-        <div>
+      <div className="flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8">
+        <div className="w-full lg:w-1/3">
+          <Image
+            src="/arif_new.png"
+            width={300}
+            height={300}
+            alt="arif profile"
+            className="rouned"
+          />
+        </div>
+
+        <div className="wi-full lg:w-2/3">
           <h3 className="text-4xl mb-8">About Me</h3>
 
           <div className="text-md font-light text-zinc-300">

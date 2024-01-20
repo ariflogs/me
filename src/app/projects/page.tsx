@@ -31,7 +31,7 @@ export default function page() {
       <ul className="space-y-4">
         {projects.map((project) => (
           <li
-            className="rounded-md transition p-6 border border-transparent hover:border-zinc-400"
+            className="rounded-md transition p-4 lg:p-6 border border-transparent hover:border-zinc-400"
             key={project.title}
           >
             <a href={project.url} target="_blank" className="text-2xl">
@@ -40,11 +40,11 @@ export default function page() {
             <p className="text-zinc-300 mb-4 font-light text-sm">
               {project.description}
             </p>
-            <div>
+            <div className="flex space-x-2">
               {project.tags.split(",").map((tag: string) => (
                 <span
                   key={tag}
-                  className="px-2 py-1 rounded-full bg-purple-100 opacity-90 text-purple-800 text-xs font-semibold mr-2"
+                  className="px-2 py-1 rounded-full bg-purple-100 opacity-90 text-purple-800 text-xs font-semibold"
                 >
                   {tag}
                 </span>

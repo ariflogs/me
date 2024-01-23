@@ -1,7 +1,15 @@
 import Image from "next/image";
 import React from "react";
 
+const navRoutes = [
+  { title: "Home", route: "/", target: "_blank" },
+  { title: "Aboout", route: "/", target: "_blank" },
+  { title: "Projects", route: "/", target: "_blank" },
+  { title: "Blogs", route: "/", target: "_blank" },
+];
+
 export default function Navbar() {
+
   return (
     <header className="flex justify-between items-center py-4 px-4 lg:px-0 container max-w-4xl mx-auto">
       <a href="/">

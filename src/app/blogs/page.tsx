@@ -14,17 +14,15 @@ export default function page() {
   const blogs = getBlogPosts();
 
   return (
-    <div>
-      <ul className="space-y-4">
-        {blogs.map((blog) => (
-          <li className="" key={blog.data.title}>
-            <a href={`/blogs/${blog.data.slug}`} className="text-xl block">
-              {blog.data.title}
-            </a>
-            <span className="text-sm text-zinc-400">{blog.data.pubDate}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul className="space-y-4">
+      {blogs.map((blog) => (
+        <li className="" key={blog.data.title}>
+          <a href={`/blogs/${blog.data.slug}`} className="text-xl block">
+            {blog.data.title}
+          </a>
+          <span className="text-sm text-zinc-400">{blog.data.pubDate}</span>
+        </li>
+      ))}
+    </ul>
   );
 }

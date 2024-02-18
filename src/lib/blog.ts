@@ -5,12 +5,15 @@ import { join } from "path";
 
 const blogsDirPath = join(process.cwd(), "_blogs");
 
-export function getBlogBySlug(slug: string) {
-  const fullPath = join(blogsDirPath, `${slug}.md`);
+export function getBlogBySlug(slug: string): BlogPost {
+  const fullPath = join(blogsDirPath, `${slug}.mdx`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
+  const {
+    data: { title, pubDate },
+    content,
+  } = matter(fileContents);
 
-  return { ...data, slug, content };
+  return { data: { slug, title, pubDate }, content };
 }
 
 export function getBlogPosts(): BlogPost[] {

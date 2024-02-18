@@ -1,12 +1,16 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote } from "next-mdx-remote";
 import { getBlogBySlug } from "@/lib/blog";
-// import markdownToHtml from "../../../lib/markdownToHtml";
-// import Alert from "../../_components/alert";
-// import Container from "../../_components/container";
-// import Header from "../../_components/header";
-// import { PostBody } from "../../_components/post-body";
-// import { PostHeader } from "../../_components/post-header";
+import { BlogPostHeader } from "@/components/blog/BlogHeader";
+import { RenderMdx } from "@/components/mdx";
+
+type Params = {
+  params: {
+    slug: string;
+  };
+};
 
 export default async function Post({ params }: Params) {
   const blog = getBlogBySlug(params.slug);
@@ -15,52 +19,19 @@ export default async function Post({ params }: Params) {
     return notFound();
   }
 
+  const {
+    data: { title, pubDate },
+    content,
+  } = blog;
+  const serializedContent = await serialize(content);
+
   return (
-    <main>
-      {/* <Alert preview={post.preview} />
-      <Container>
-        <Header />
-        <article className="mb-32">
-          <PostHeader
-            title={post.title}
-            coverImage={post.coverImage}
-            date={post.date}
-            author={post.author}
-          />
-          <PostBody content={content} />
-        </article>
-      </Container> */}
-    </main>
+    <div>
+      <BlogPostHeader title={title} pubDate={pubDate} />
+      <div className="divider h-12"></div>
+      <article>
+        <RenderMdx source={serializedContent} />
+      </article>
+    </div>
   );
 }
-
-type Params = {
-  params: {
-    slug: string;
-  };
-};
-
-// export function generateMetadata({ params }: Params): Metadata {
-//   const post = getPostBySlug(params.slug);
-
-//   if (!post) {
-//     return notFound();
-//   }
-
-//   const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`;
-
-//   return {
-//     openGraph: {
-//       title,
-//       images: [post.ogImage.url],
-//     },
-//   };
-// }
-
-// export async function generateStaticParams() {
-//   const posts = getAllPosts();
-
-//   return posts.map((post) => ({
-//     slug: post.slug,
-//   }));
-// }

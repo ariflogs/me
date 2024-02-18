@@ -3,6 +3,8 @@ title: Build and deploy a blog site with Ghost, Docker & Caddy
 pubDate: Feb 18, 2024
 ---
 
+⚠️ In Progress...
+
 ## Intro
 
 Recently I had to build a website called [Worldly Wanderlust](https://worldlywanderlust.com) for me and my wife, where we can post articles about what's it like living in different parts of the world.\
@@ -24,14 +26,26 @@ In this article, I'll share how I used Ghost with Docker and Caddy to self host 
 My VPS config 👇🏼
 
 ```
-    OS: Ubuntu 20.04
-    CPU: 1 Core,
-    RAM: 2 GB,
-    DISK: 50 GB
-    COST: $12/month
+OS: Ubuntu 20.04
+CPU: 1 Core,
+RAM: 2 GB,
+DISK: 50 GB
+COST: $12/month
 ```
+
+
 
 Your configurations might be different, but if you want to use Docker, I will recommend to have minimum 1GB ram.
 
 
 
+```
+export function BlogPostHeader({ title, pubDate }: Props) {
+    return (
+        <>
+        <h1>{title}</h1>
+        <span className="text-sm text-zinc-400">{pubDate}</span>
+        </>
+    );
+}
+```

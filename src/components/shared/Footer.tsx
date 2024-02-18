@@ -16,7 +16,7 @@ export default function Footer() {
           Github
         </a>
         <span className="px-2"> ·</span>
-        <a href="https://youtube.com/@beyondwebdev" target="_blank">
+        <a href="https://youtube.com/@ariflogs" target="_blank">
           YouTube
         </a>
       </div>

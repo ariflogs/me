@@ -51,10 +51,11 @@ export default function page() {
             </p>
             <br />
             <p>
-              Besides building software, I'm passionate about startups and small
-              businesses. Over the past few years, I've launched several side
-              projects. Almost all of them failed, but I'm hoping they will lead
-              me to that one overnight success that everyone talks about! 🤞😬
+              Besides building software, I&apos;m passionate about startups and
+              small businesses. Over the past few years, I&apos;ve launched
+              several side projects. Almost all of them failed, but I&apos;m
+              hoping they will lead me to that one overnight success that
+              everyone talks about! 🤞😬
             </p>
           </div>
         </div>

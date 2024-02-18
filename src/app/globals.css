@@ -25,3 +25,23 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+* {
+  color: #eee;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: xx-large;
+}
+
+h2 {
+  font-size: x-large;
+}
+
+h3 {
+  font-size: large;
+}

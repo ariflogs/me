@@ -2,6 +2,14 @@ import React from "react";
 
 const projects = [
   {
+    title: "Worldly Wanderlust",
+    description:
+      "Experience life across the world and find the destination that suits You.",
+    url: "http://worldlywanderlust.com",
+    pubDate: "Feb 1 2024",
+    tags: "Blog, Podcast, GhostCMS",
+  },
+  {
     title: "SQL-to-NoSQL",
     description:
       "A NodeJS ORM library that let's you run SQL scripts on your NoSQL databases.",
@@ -15,14 +23,7 @@ const projects = [
       "A product listing site for indie hackers. With IndieHacks, you can discover Indie version of popular SaaS alternatives.",
     url: "https://indiehustles.com/",
     pubDate: "Mar 13 2023",
-    tags: "Typescript, Next.js, Python, Django, Sqllite",
-  },
-  {
-    title: "NotionCommerce",
-    description: "Build and run your E-commerce right from Notion.",
-    url: "https://notioncommerce.com",
-    pubDate: "Jun 15 2022",
-    tags: "Typescript, React, NodeJS, MongoDB",
+    tags: "Product Listing, Community, NextJS, Supabase",
   },
 ];
 export default function page() {

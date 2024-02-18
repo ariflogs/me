@@ -16,8 +16,8 @@ const timeline = [
     title: "Teaching STEM to primary school students",
   },
   {
-    date: "December 2023",
-    title: "Started creating content on YouTube",
+    date: "January 2024",
+    title: "Quit Job to do Indie Hacking full-time",
   },
   {
     date: "To be continued...",
@@ -46,18 +46,15 @@ export default function page() {
             <p>I{"'"}m a Full-stack developer with focus on backend.</p>
             <p>
               Over the past four years, I have worked with variety of tools and
-              technologies in the Web and App development space. My experience
-              includes working with techlogies like Javascript, Typescript,
-              Python, Flutter, ReactJS, NodeJS, NextJS, SQL, NoSQL, AWS...
-            </p>
-            <p>
-              Currently focusing on building Open-source tools and getting good
-              at Competitive Programming.
+              technologies in the Web and App development space to solve buiness
+              and cunsumer related problems.
             </p>
             <br />
             <p>
-              Besides building software products, I also have experience in
-              being a teacher, running business and creating content.
+              Besides building software, I'm passionate about startups and small
+              businesses. Over the past few years, I've launched several side
+              projects. Almost all of them failed, but I'm hoping they will lead
+              me to that one overnight success that everyone talks about! 🤞😬
             </p>
           </div>
         </div>

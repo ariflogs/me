@@ -1,4 +1,4 @@
-import { airtable } from "@/lib/airtable";
+import { notFound } from "next/navigation";
 import React from "react";
 
 const weeklyGoals = [
@@ -8,18 +8,41 @@ const weeklyGoals = [
   "Analyse competitor's social profiles",
 ];
 
-export default async function page() {
-  const websites: {
-    name: string;
-    blogTitle: string;
-    blogTopic: string;
-    blogWebsite: string;
-  }[] = (await airtable("Table 1").select().all()).map((record) => ({
-    name: record.fields["Name"]?.toString() || "",
-    blogTitle: record.fields["Blog Title"]?.toString() || "",
-    blogTopic: record.fields["Blog Topic"]?.toString() || "",
-    blogWebsite: record.fields["Blog Website"]?.toString() || "",
-  }));
+interface IWebsite {
+  name: string;
+  blogTitle: string;
+  blogTopic: string;
+  blogWebsite: string;
+}
+
+async function getWebsites() {
+  const results = await fetch(
+    "https://api.airtable.com/v0/appEV286bM417YeIN/Table%201?maxRecords=3&view=Grid%20view",
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.AIRTABLE_SECRET_API_TOKEN}`,
+      },
+    }
+  );
+  const data = await results.json();
+  const websites: IWebsite[] = data.records.map(
+    (record: { fields: { [x: string]: { toString: () => any } } }) => ({
+      name: record.fields["Name"]?.toString() || "",
+      blogTitle: record.fields["Blog Title"]?.toString() || "",
+      blogTopic: record.fields["Blog Topic"]?.toString() || "",
+      blogWebsite: record.fields["Blog Website"]?.toString() || "",
+    })
+  );
+
+  return websites;
+}
+
+export default async function Page() {
+  const websites = await getWebsites();
+
+  if (!websites) {
+    return notFound();
+  }
 
   return (
     <div className="flex min-h-96">

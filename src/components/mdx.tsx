@@ -1,6 +1,4 @@
 "use client";
-
-import { MDXComponents } from "mdx/types";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { highlight } from "sugar-high";
 

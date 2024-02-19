@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
@@ -29,6 +30,7 @@ export default function RootLayout({
         </div>
         <div className="h-12"></div>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

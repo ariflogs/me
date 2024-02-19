@@ -1,17 +1,18 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const navRoutes = [
   { title: "Home", route: "/", target: "_blank" },
-  { title: "Aboout", route: "/", target: "_blank" },
-  { title: "Projects", route: "/", target: "_blank" },
-  { title: "Blogs", route: "/", target: "_blank" },
+  { title: "#Project2024", route: "/project2024", target: "_blank" },
+  { title: "Blogs", route: "/blogs", target: "_blank" },
+  { title: "Projects", route: "/projects", target: "_blank" },
+  { title: "Aboout", route: "/about", target: "_blank" },
 ];
 
 export default function Navbar() {
-
   return (
-    <header className="flex justify-between items-center py-4 px-4 lg:px-0 container max-w-4xl mx-auto">
+    <header className="flex justify-between items-center py-4 px-4 lg:px-0 container max-w-5xl mx-auto">
       <a href="/">
         <Image
           src="/logo.png"
@@ -22,21 +23,12 @@ export default function Navbar() {
         />
       </a>
 
-      <nav className="flex flex-col justify-end mobile-nav space-y-2 md:hidden">
-        <a href="/">Home</a>
-        <a href="/blogs">Blogs</a>
-        <a href="/projects">Projects</a>
-        <a href="/about">About</a>
-        {/* <a href="https://dev.to/ariflogs" target="_blank">
-          Blogs
-        </a> */}
-      </nav>
-
-      <nav className="hidden md:block space-x-4">
-        <a href="/">Home</a>
-        <a href="/blogs">Blogs</a>
-        <a href="/projects">Projects</a>
-        <a href="/about">About</a>
+      <nav className="flex flex-col md:flex-row md:justify-end space-y-2 md:space-y-0 md:space-x-4">
+        {navRoutes.map((route) => (
+          <Link href={route.route} key={route.route}>
+            {route.title}
+          </Link>
+        ))}
       </nav>
     </header>
   );

@@ -1,7 +1,5 @@
-import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { serialize } from "next-mdx-remote/serialize";
-import { MDXRemote } from "next-mdx-remote";
 import { getBlogBySlug } from "@/lib/blog";
 import { BlogPostHeader } from "@/components/blog/BlogHeader";
 import { RenderMdx } from "@/components/mdx";
